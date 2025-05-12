@@ -52,7 +52,7 @@ fun FormTextfield(shape: RoundedCornerShape,modifier: Modifier,value: String, la
                 focusedContainerColor = Color.Transparent,
                 unfocusedContainerColor = Color.Transparent,
                 focusedTextColor = Color.Black,
-                unfocusedTextColor = Color.Black
+                unfocusedTextColor = Color.Gray
             ),
             modifier = Modifier.fillMaxWidth(),
             shape = shape

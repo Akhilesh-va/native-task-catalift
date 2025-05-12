@@ -16,6 +16,10 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,8 +39,11 @@ import com.example.catalift.ui.screens.personal_details.personal_details_compone
 
 @Composable
 fun LoginScreen( onSignInClick: () -> Unit) {
+    var phoneNumber by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
     Column(
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -93,21 +100,21 @@ fun LoginScreen( onSignInClick: () -> Unit) {
             )
         }
         FormTextfield(
-            value = "Phone number",
-            label = "",
+            value = phoneNumber,
+            label = "Phone number",
             placeholder = "Phone number",
             required = false,
-            onValueChange = {},
+            onValueChange = { phoneNumber = it },
             modifier = Modifier,
             shape = RoundedCornerShape(20.dp)
 
         )
         FormTextfield(
-            value = "Password",
-            label = "",
+            value = password,
+            label = "Password",
             placeholder = "Password",
             required = false,
-            onValueChange = {},
+            onValueChange = { password = it},
             modifier = Modifier,
             shape = RoundedCornerShape(20.dp)
 
@@ -162,7 +169,7 @@ fun LoginScreen( onSignInClick: () -> Unit) {
         Text(
             text = buildAnnotatedString {
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Normal)) {
-                    append("Don't An Account?")
+                    append("Don't An Account?  ")
                 }
                 withStyle(
                     style = SpanStyle(

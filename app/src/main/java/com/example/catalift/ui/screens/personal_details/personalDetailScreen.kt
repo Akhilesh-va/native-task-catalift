@@ -88,7 +88,8 @@ fun PersonalDetailScreen() {
                 expanded = motherTongueExpanded,
                 onExpandedChange = { motherTongueExpanded = it },
                 selectedItem = motherTongue,
-                onItemSelected = { motherTongue = it }
+                onItemSelected = { motherTongue = it },
+                lable = "Select Mother Tongue"
             )
         }
 
@@ -99,7 +100,8 @@ fun PersonalDetailScreen() {
                 expanded = genderExpanded,
                 onExpandedChange = { genderExpanded = it },
                 selectedItem = gender,
-                onItemSelected = { gender = it }
+                onItemSelected = { gender = it },
+                lable = "Select Gender"
             )
         }
 

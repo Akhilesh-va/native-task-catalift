@@ -25,7 +25,8 @@ fun Dropdown(
     expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
     selectedItem: String,
-    onItemSelected: (String) -> Unit
+    onItemSelected: (String) -> Unit,
+    lable : String
 ) {
     Column(
         modifier = Modifier
@@ -51,7 +52,7 @@ fun Dropdown(
                 ),
                 placeholder = {
                     if (selectedItem.isEmpty()) {
-                        Text("Select an item", color = colorResource(R.color.text_color))
+                        Text(lable, color = colorResource(R.color.text_color))
                     }
                 }
             )
